@@ -3,7 +3,7 @@ import "./footer.css";
 import { assets } from "../../assets/assets";
 import { Link } from "react-router-dom";
 
-const footer = () => {
+const Footer = () => {
   return (
     <div className="footer" id="footer">
       <div className="footer-content">
@@ -46,4 +46,4 @@ const footer = () => {
   );
 };
 
-export default footer;
+export default Footer;
