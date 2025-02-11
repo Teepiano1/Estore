@@ -6,6 +6,7 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY)
 
 //placing user order for frontend
 const placeOrder = async (req, res )=>{
+// const frontend_url = "http://localhost:5174";
 const frontend_url = "http://localhost:5174";
 
     try {
@@ -18,7 +19,7 @@ const frontend_url = "http://localhost:5174";
         await newOrder.save();
         await userModel.findByIdAndUpdate(req.body.userId,{cartData:{}});
 
-        //for strive payment
+        //for stripe payment
         const line_items = req.body.items.map((item)=>({
             price_data:{
                 currency:"inr",
